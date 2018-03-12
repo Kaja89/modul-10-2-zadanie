@@ -18,11 +18,12 @@ public class BoardTestSuite {
         //When
         Board board = config.createBoard();
         String task = board.getToDoList().getTasks().get(0);
+        String task1 = board.getToDoList().getTasks().get(1);
+        String task2 = board.getToDoList().getTasks().get(2);
         //Then
         Assert.assertEquals("First task to do", task);
-        TaskList tasks = board.getToDoList();
-        tasks.getTasks().stream()
-                .forEach(System.out::println);
+        Assert.assertEquals("Second task to do", task1);
+        Assert.assertEquals("Third task to do", task2);
     }
 
     @Test
@@ -32,12 +33,13 @@ public class BoardTestSuite {
         BoardConfig config = context.getBean(BoardConfig.class);
         //When
         Board board = config.createBoard();
-        String task = board.getInProgressList().getTasks().get(1);
+        String task = board.getInProgressList().getTasks().get(0);
+        String task1 = board.getInProgressList().getTasks().get(1);
+        String task2 = board.getInProgressList().getTasks().get(2);
         //Then
-        Assert.assertEquals(task, "Second task in progress");
-        TaskList taskList = board.getInProgressList();
-        taskList.getTasks().stream()
-                .forEach(System.out::println);
+        Assert.assertEquals(task, "First task in progress");
+        Assert.assertEquals(task1, "Second task in progress");
+        Assert.assertEquals(task2, "Third task in progress");
     }
 
     @Test
@@ -47,12 +49,13 @@ public class BoardTestSuite {
         BoardConfig boardConfig = context.getBean(BoardConfig.class);
         //When
         Board board = boardConfig.createBoard();
-        String task = board.getDoneList().getTasks().get(2);
+        String task = board.getDoneList().getTasks().get(0);
+        String task1 = board.getDoneList().getTasks().get(1);
+        String task2 = board.getDoneList().getTasks().get(2);
         //Then
-        Assert.assertEquals(task, "Third task done");
-        TaskList taskList = board.getDoneList();
-        taskList.getTasks().stream()
-                .forEach(System.out::println);
+        Assert.assertEquals(task, "First task done");
+        Assert.assertEquals(task1, "Second task done");
+        Assert.assertEquals(task2, "Third task done");
     }
 }
 

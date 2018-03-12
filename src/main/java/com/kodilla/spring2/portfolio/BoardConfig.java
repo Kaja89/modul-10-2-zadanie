@@ -20,7 +20,7 @@ public class BoardConfig {
     @Bean
     public TaskList createInProgressList() {
         ArrayList<String> tasks = new ArrayList<>();
-        tasks.add("First task in progress ");
+        tasks.add("First task in progress");
         tasks.add("Second task in progress");
         tasks.add("Third task in progress");
         return new TaskList(tasks);
@@ -29,7 +29,7 @@ public class BoardConfig {
     @Bean
     public TaskList createDoneList() {
         ArrayList<String> tasks = new ArrayList<>();
-        tasks.add("First task done ");
+        tasks.add("First task done");
         tasks.add("Second task done");
         tasks.add("Third task done");
         return new TaskList(tasks);
