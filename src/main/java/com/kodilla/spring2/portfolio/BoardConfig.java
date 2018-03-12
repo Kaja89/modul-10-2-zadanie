@@ -11,7 +11,7 @@ public class BoardConfig {
     @Bean
     public TaskList createToDoList() {
         ArrayList<String> tasks = new ArrayList<>();
-        tasks.add("First task to do ");
+        tasks.add("First task to do");
         tasks.add("Second task to do");
         tasks.add("Third task to do");
         return new TaskList(tasks);
